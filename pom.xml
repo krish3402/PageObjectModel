@@ -158,7 +158,7 @@
         				</execution>
      				 </executions>
 				<configuration>					      					 
-       					 <destFile>$target/jacoco.exec</destFile>
+       					 <destFile>target/jacoco.exec</destFile>
       					  <dataFile>target/jacoco.exec</dataFile>
       					  <output>file</output>
        				 	<append>true</append>  				 	
