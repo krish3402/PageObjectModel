@@ -158,9 +158,12 @@
         				</execution>
      				 </executions>
 				<configuration>
-					<systemPropertyVariables>
-						<jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
-					</systemPropertyVariables>
+					<configuration>       					 
+       					 <destFile>$target/jacoco.exec</destFile>
+      					  <dataFile>target/jacoco.exec</dataFile>
+      					  <output>file</output>
+       				 	<append>true</append>
+  				 	 </configuration
 				</configuration>
 			</plugin>
 		</plugins>
