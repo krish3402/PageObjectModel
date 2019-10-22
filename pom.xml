@@ -157,13 +157,11 @@
          					 </goals>
         				</execution>
      				 </executions>
-				<configuration>
-					<configuration>       					 
+				<configuration>					      					 
        					 <destFile>$target/jacoco.exec</destFile>
       					  <dataFile>target/jacoco.exec</dataFile>
       					  <output>file</output>
-       				 	<append>true</append>
-  				 	 </configuration
+       				 	<append>true</append>  				 	
 				</configuration>
 			</plugin>
 		</plugins>
