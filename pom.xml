@@ -64,6 +64,12 @@
 			<artifactId>ooxml-schemas</artifactId>
 			<version>1.1</version>
 		</dependency>
+		<dependency>
+    			  <groupId>org.testng</groupId>
+   			   <artifactId>testng</artifactId>
+   			   <version>6.9.8</version>
+   			   <scope>test</scope>
+ 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.poi</groupId>
