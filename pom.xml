@@ -145,6 +145,13 @@
       <version>3.3.0</version>
       <scope>test</scope>
     </dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0-M3</version>
+</dependency>
+
 
 
 	</dependencies>
@@ -163,10 +170,16 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-		<plugin>
+	
+	<plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M3</version>    
+        <version>3.0.0-M3</version>
+        <configuration>
+          <systemPropertyVariables>
+            <propertyName>firefox</propertyName>
+          </systemPropertyVariables>
+        </configuration>
       </plugin>
 		
 		
