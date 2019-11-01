@@ -157,6 +157,24 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			 <plugin>
+         			   <groupId>org.codehaus.mojo</groupId>
+        			    <artifactId>cobertura-maven-plugin</artifactId>
+         			   <configuration>
+         			     <formats>
+         			       <format>xml</format>
+         			       <format>html</format>
+        			      </formats>
+        			    </configuration>
+        			    <executions>
+        			      <execution>
+         			       <phase>package</phase>
+         			       <goals>
+           			       <goal>cobertura</goal>
+           			     </goals>
+           			   </execution>
+           			 </executions>
+        			  </plugin>
 			<plugin>
 			  <groupId>org.jacoco</groupId>
     				  <artifactId>jacoco-maven-plugin</artifactId>
