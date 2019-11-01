@@ -156,7 +156,8 @@
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
-			</plugin>			
+			</plugin>
+			<plugin>
 			  <groupId>org.jacoco</groupId>
     				  <artifactId>jacoco-maven-plugin</artifactId>
   				    <version>0.7.8</version>
