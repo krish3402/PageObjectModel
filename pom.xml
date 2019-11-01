@@ -30,6 +30,19 @@
 			<version>6.11</version>
 			<scope>compile</scope>
 		</dependency>
+		 <dependency>
+            <groupId>org.uncommons</groupId>
+            <artifactId>reportng</artifactId>
+            <version>1.1.2</version>
+            <scope>test</scope>		
+			<exclusions>
+                <exclusion>
+                    <groupId>org.testng</groupId>
+                    <artifactId>testng</artifactId>
+                </exclusion>
+            </exclusions>
+			     </dependency>
+      
 
 
 		<dependency>
@@ -43,8 +56,17 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.9</version>
-		</dependency>	
-		
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>3.9</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>ooxml-schemas</artifactId>
@@ -56,7 +78,16 @@
 			<artifactId>openxml4j</artifactId>
 			<version>1.0-beta</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml-schemas</artifactId>
@@ -66,7 +97,18 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-scratchpad</artifactId>
 			<version>3.9</version>
-		</dependency>		
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>ooxml-schemas</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>openxml4j</artifactId>
+			<version>1.0-beta</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
 		<dependency>
@@ -74,6 +116,20 @@
 			<artifactId>extentreports</artifactId>
 			<version>2.41.2</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-resources-plugin</artifactId>
+    <version>2.6</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+<dependency>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.7.8</version>
+</dependency>
+
+
 
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
@@ -81,39 +137,39 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
-		
-	
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+
+<dependency>
+      <groupId>org.apache.maven.plugin-testing</groupId>
+      <artifactId>maven-plugin-testing-harness</artifactId>
+      <version>3.3.0</version>
+      <scope>test</scope>
+    </dependency>
+
+
 	</dependencies>
+	
+
 	<build>
-		<plugins>
-			<plugin>
-      			  <groupId>org.apache.maven.plugins</groupId>
-      			  <artifactId>maven-surefire-plugin</artifactId>
-     			   <version>2.12.4</version>
-     			   <configuration>
-      			    <skipTests>true</skipTests>
-    			    </configuration>
-   			   </plugin>
-			
-			
-			<plugin>
-			  <groupId>org.jacoco</groupId>
-    				  <artifactId>jacoco-maven-plugin</artifactId>
-  				    <version>0.7.8</version>
-  				    <executions>
-   				     <execution>
-   				       <id>pre-unit-test</id>
-   				       <goals>
-    				        <goal>prepare-agent</goal>
-   				       </goals>
-    				    </execution>
-    				    <execution>
-     				     <id>post-unit-test</id>
-      				    <phase>test</phase>
-       				   <goals>
-       				     <goal>report</goal>
-       				   </goals>
-					    <configuration>
+  <plugins>
+    <plugin>
+		<groupId>org.jacoco</groupId>
+		<artifactId>jacoco-maven-plugin</artifactId>
+		<version>0.8.2</version>
+		<executions>
+			<execution>
+				<goals>
+					<goal>prepare-agent</goal>
+				</goals>
+			</execution>
+			<!-- attached to Maven test phase -->
+			<execution>
+				<id>report</id>
+				<phase>test</phase>
+				<goals>
+					<goal>report</goal>
+				</goals>			
+		<configuration>
 							<!-- Sets the path to the file which contains the execution data. -->
 
 							<dataFile>target/jacoco.exec</dataFile>
@@ -127,7 +183,9 @@
 						<jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
 					</systemPropertyVariables>
 				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	</plugin>
+  </plugins>
+ </build>
+
+	
 </project>
