@@ -4,7 +4,7 @@
 
 	<groupId>FreeCRMTestAutomation</groupId>
 	<artifactId>FreeCRMTest</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>FreeCRMTest</name>
@@ -37,11 +37,6 @@
 			<artifactId>poi</artifactId>
 			<version>3.16-beta2</version>
 		</dependency>
-		<dependency>
-     		 <groupId>junit</groupId>
-     		 <artifactId>junit</artifactId>
-     		 <version>4.12</version>
-  		  </dependency>
 
 
 		<dependency>
@@ -63,7 +58,7 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>ooxml-schemas</artifactId>
 			<version>1.1</version>
-		</dependency>		
+		</dependency>
 
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -84,12 +79,6 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>3.9</version>
-		</dependency>
-		<dependency>
- 			 <groupId>org.apache.maven.plugins</groupId>
-			  <artifactId>maven-compiler-plugin</artifactId>
- 			 <version>3.8.1</version>
- 			 <type>maven-plugin</type>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -121,45 +110,7 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
-		
-		<dependency>
-   		<groupId>org.codehaus.sonar.plugins</groupId>
-   		<artifactId>sonar-jacoco-plugin</artifactId>
-   		<version>3.2.1</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
-<dependency>
-    <groupId>org.sonarsource.scanner.maven</groupId>
-    <artifactId>sonar-maven-plugin</artifactId>
-    <version>3.7.0.1746</version>
-</dependency>
 
 
 	</dependencies>
-		<build>
-<plugins>
-  <plugin>
-      <groupId>org.jacoco</groupId>
-      <artifactId>jacoco-maven-plugin</artifactId>
-      <version>0.7.8</version>
-      <executions>
-        <execution>
-          <id>pre-unit-test</id>
-          <goals>
-            <goal>prepare-agent</goal>
-          </goals>
-        </execution>
-        <execution>
-          <id>post-unit-test</id>
-          <phase>test</phase>
-          <goals>
-            <goal>report</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
-  </plugins>
- </build>
-	
-	
 </project>
